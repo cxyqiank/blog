@@ -1,0 +1,31 @@
+{include file="./common/head" /}
+<div class="overall">
+
+	<div class="left">
+{foreach $list as $v}
+		<div class="xnews2">
+				<div class="pic"><a target="_blank" href="/index/article/{$v.id}"><img src="{$v.pic}" alt="衣服上的烧烤味怎么处理 小方法巧除味"/></a></div>
+				<div class="dec">
+				<h3><a target="_blank" href="/index/article/{$v.id}">{$v.title}</a></h3>
+				<div class="time">发布时间：{$v.time|date='Y-m-d',###}</div>
+				<p>{$v.desc}</p>
+				<div class="time"><a href='/index/search/{$v.keywords}'>{$v.keywords|default=''}</a></div>
+				</div>
+				</div>
+{/foreach}
+				
+				<div class="pages">
+				<div class="plist" >
+
+				{$page}
+
+				</div>
+				</div>
+	</div>
+
+
+	{include file="./common/right"}
+</div>
+{include file="./common/foot"}
+</body>
+</html>

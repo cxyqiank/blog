@@ -1,2 +1,1 @@
-# blog
-A blog make with thinkphp5
+A blog make with thinkphp5.

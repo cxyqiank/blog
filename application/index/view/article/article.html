@@ -1,0 +1,56 @@
+{include file="common/head" /}
+
+        <div class="overall">
+            <div class="left">
+                <div class="scrap">
+                    <h1>{$data.title}</h1>
+                    <div class="spread">
+                        <span class="writor">发布时间：{$data.time|date='Y-m-d',###}</span>
+                        <span class="writor">编辑：{$data.author}</span>
+                        <span class="writor">标签：{$data.keywords}</span>
+                        <span class="writor">热度：{$data.click}<script src="/jiehun/plus/count.php?view=yes&aid=156214&mid=55" type='text/javascript' language="javascript"></script></span>
+                    </div>
+                </div>
+
+                <!--百度分享-->
+                <script src='/jiehun/goto/my-65542.js' language='javascript'></script>
+
+                <div class="takeaway">
+                    {$data.content}
+                </div>
+
+
+
+
+                <!--相关阅读 -->
+                <div class="xgread">
+                    <div class="til"><h4>相关阅读</h4></div>
+                    <div class="lef"><!--相关阅读主题链接--><script src='/jiehun/goto/my-65540.js' language='javascript'></script></div>
+                    <div class="rig">
+                        <ul>
+                            {foreach $relations as $relation }
+                            <li><a href='{$relation.pic}' target="_blank">{$relation.title}</a></li>
+                            {/foreach}
+                        </ul>
+                    </div>
+                </div>
+
+                <!--频道推荐-->
+                <div class="hotsnew">
+                    <div class="til"><h4>频道推荐</h4></div>
+                    <ul>
+                        {foreach $relations as $relation }
+                        <li><a href='{$relation.pic}' target="_blank">{$relation.title}</a></li>
+                        {/foreach}
+                    </ul>
+                 </div>
+            </div>
+
+
+
+            {include file="./common/right"}
+</div>
+
+{include file="./common/foot"}
+</body>
+</html>
