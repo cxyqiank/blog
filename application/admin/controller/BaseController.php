@@ -58,4 +58,8 @@ class BaseController extends Controller
         $data = ['fileName'=>$fileName,'status'=>$res];
         return $data;
     }
+    public function MISS()
+    {
+        $this->error('404 找不到要访问的地址');
+    }
 }

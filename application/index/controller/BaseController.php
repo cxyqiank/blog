@@ -28,4 +28,8 @@ class BaseController extends Controller
             'url' =>$data['url']
             ]);
     }
+    public function MISS()
+    {
+        $this->error('404 找不到要访问的地址');
+    }
 }
