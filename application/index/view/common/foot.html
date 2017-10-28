@@ -1,6 +1,7 @@
 <ul>
-    {foreach $url as $v}
+
     <span style="margin-left:100px;font-size: 16px;">友链：</span>
+    {foreach $url as $v}
     <span style="font-size: 16px;color:dodgerblue;">{$v.desc}:<a href="{$v.url}" style="font-size: 16px;">{$v.title}</a></span>&nbsp;&nbsp;&nbsp;&nbsp;
     {/foreach}
 </ul>
