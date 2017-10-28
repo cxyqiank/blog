@@ -15,6 +15,18 @@ class Login extends Controller
         {
             //查询数据
             $input = input('post.');
+            //先验证验证码
+            $validate = validate('login');
+            if(!$validate->check(input('post.')))
+            {
+                $error = $validate->getError();
+               if($error)
+               {
+                    $this->error($error);
+               }
+                die;
+            }
+
             $res = \app\admin\model\Admin::where('username','eq',$input['username'])
                 ->field('password')
                 ->find()

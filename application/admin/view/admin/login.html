@@ -28,6 +28,18 @@
                 <div class="loginbox-textbox">
                     <input class="form-control" placeholder="password" name="password" type="password">
                 </div>
+                <div class="loginbox-textbox">
+                    <input class="form-control" placeholder="captcha" name="captcha" type="text">
+                    <img id="verify_img" src="{:captcha_src()}" alt="captcha" onclick="refreshVerify()"/>
+                    <script>
+                        function refreshVerify() {
+                            var ts = Date.parse(new Date())/1000;
+                            var img = document.getElementById('verify_img');
+                            img.src = "/captcha?id="+ts;
+                        }
+                    </script>
+
+                </div>
                 <div class="loginbox-submit">
                     <input class="btn btn-primary btn-block" value="Login" type="submit">
                 </div>
