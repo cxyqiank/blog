@@ -1,7 +1,8 @@
 A blog make with thinkphp5.
 You must check the /application/database.php,/public/index.php and edit the message.
 The queries  to create database is under.
-You can see the demo on browser with address blog.cxyqk.com .
+You can see the demo on browser with address blog.cxyqk.com.
+The username is admin and the password is admin123.
 
 - MySQL dump 10.13  Distrib 5.7.14, for Win64 (x86_64)
 --
