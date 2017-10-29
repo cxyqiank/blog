@@ -17,13 +17,13 @@ class Login extends Controller
             $input = input('post.');
             //先验证验证码
             $validate = validate('login');
-            if(!$validate->check(input('post.')))
+            if(!$validate->batch()->check(input('post.')))
             {
                 $error = $validate->getError();
-               if($error)
-               {
-                    $this->error($error);
-               }
+                foreach($error as $k=>$v)
+                {
+                    echo $v.'<br>';
+                }
                 die;
             }
 
