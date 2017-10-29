@@ -20,10 +20,12 @@ class Login extends Controller
             if(!$validate->batch()->check(input('post.')))
             {
                 $error = $validate->getError();
+                $errors = '';
                 foreach($error as $k=>$v)
                 {
-                    echo $v.'<br>';
+                    $errors .= $v.'<br>';
                 }
+                $this->error($errors);
                 die;
             }
 
